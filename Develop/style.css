@@ -107,7 +107,8 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
+  /* padding-bottom: 85px; */
+  padding-bottom: 15px;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;
@@ -115,7 +116,8 @@ button[disabled] {
   border: 2px dashed #c0c7cf;
   border-radius: 6px;
   resize: none;
-  overflow: hidden;
+  /* overflow: hidden; */
+  min-height: 150px;
 }
 
 @media (max-width: 690px) {
