@@ -7,7 +7,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  passwordText.focus();
+  passwordText.select();
 }
 
 // Add event listener to generate button
