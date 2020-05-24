@@ -44,6 +44,7 @@ function generatePassword() {
   var charSet = 0;
 
   // get inputs & configure character sets
+  // pw length validation loop
   while (!goodInput) {
     pwLength = parseInt(prompt("Choose a password length from 8 to 128: "));
     if (typeof pwLength === "number" && pwLength >= 8 && pwLength <= 128) {
@@ -52,6 +53,7 @@ function generatePassword() {
       alert("Invalid character length.  Please try again.");
     }
   }
+  // character set validation loop
   while (!useUpper && !useLower && !useSpecial && !useNumber) {
     useUpper = confirm("Use upper case characters?");
     if (useUpper) {
@@ -92,6 +94,7 @@ function generatePassword() {
   // check to see if the randomly generated password used all of the selected character sets
   // if a selected character set is not used, then use the indexed positions to 
   // switch with a character set that has been used more than once
+  // this ensures that all of the chosen pw criteria are met
   for (var k = 0; k < overAllPos.length; k++) {
     if (overAllPos[k].length === 0) {
       for (var l = 0; l < overAllPos.length; l++) {
@@ -105,7 +108,6 @@ function generatePassword() {
     }
   }
 
-  //********run data checks to verify lower/upper/special************
-
+  // return random password that meets all selected criteria
   return pw.join('');
 }
